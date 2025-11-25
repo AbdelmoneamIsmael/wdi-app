@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'main_state.dart';
+part of 'menu_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'main_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$MainState {
+mixin _$MenuState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$MainState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MainState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MenuState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'MainState()';
+  return 'MenuState()';
 }
 
 
 }
 
 /// @nodoc
-class $MainStateCopyWith<$Res>  {
-$MainStateCopyWith(MainState _, $Res Function(MainState) __);
+class $MenuStateCopyWith<$Res>  {
+$MenuStateCopyWith(MenuState _, $Res Function(MenuState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [MainState].
-extension MainStatePatterns on MainState {
+/// Adds pattern-matching-related methods to [MenuState].
+extension MenuStatePatterns on MenuState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -174,7 +174,7 @@ return initial();case _:
 /// @nodoc
 
 
-class Initial implements MainState {
+class Initial implements MenuState {
   const Initial();
   
 
@@ -194,7 +194,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'MainState.initial()';
+  return 'MenuState.initial()';
 }
 
 

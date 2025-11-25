@@ -1,5 +1,8 @@
 {
     "cancel": "Cancel",
     "i_am_sure": "I am sure",
-    "home": "Home"
+    "home": "Home",
+    "cart": "Cart",
+    "profile": "Profile",
+    "menu": "Menu"
 }

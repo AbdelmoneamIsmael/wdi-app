@@ -45,22 +45,45 @@ class $AssetsFontsGen {
   ];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/cart.svg
+  String get cart => 'assets/icons/cart.svg';
+
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
+
+  /// File path: assets/icons/main_cart.svg
+  String get mainCart => 'assets/icons/main_cart.svg';
+
+  /// File path: assets/icons/menu.svg
+  String get menu => 'assets/icons/menu.svg';
+
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
+  /// List of all assets
+  List<String> get values => [cart, home, mainCart, menu, profile];
+}
+
 class $AssetsTranslationsGen {
   const $AssetsTranslationsGen();
 
-  /// File path: assets/translations/ar.json
-  String get ar => 'assets/translations/ar.json';
+  /// File path: assets/translations/ar-SA.json
+  String get arSA => 'assets/translations/ar-SA.json';
 
-  /// File path: assets/translations/en.json
-  String get en => 'assets/translations/en.json';
+  /// File path: assets/translations/en-US.json
+  String get enUS => 'assets/translations/en-US.json';
 
   /// List of all assets
-  List<String> get values => [ar, en];
+  List<String> get values => [arSA, enUS];
 }
 
 class Assets {
   const Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }

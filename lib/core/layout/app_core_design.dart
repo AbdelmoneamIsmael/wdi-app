@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wdi/core/themes/theme/custom_theme.dart';
 import '../bloc/app/app_state.dart';
 
 import '../bloc/app/app_cubit.dart';
@@ -27,7 +28,7 @@ class ApplicationDesign extends StatelessWidget {
           },
           debugShowCheckedModeBanner: false,
 
-          // theme: theme,
+          theme: lightTheme,
         );
       },
     );

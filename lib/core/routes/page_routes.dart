@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wdi/core/bloc/bloc_observer.dart';
-import '../../features/main/presentation/cubit/main_cubit.dart';
-import '../../features/main/presentation/pages/main_screen.dart';
+import '../../features/buyer/features/main/presentation/cubit/main_cubit.dart';
+import '../../features/buyer/features/main/presentation/pages/main_screen.dart';
 import '../const/app_const.dart';
 import '../routes/pages_keys.dart';
 

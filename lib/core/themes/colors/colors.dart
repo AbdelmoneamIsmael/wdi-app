@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class LightColors {
   static const Color themeColor = Color(0xffffffff);
-  static const Color backgroundColor = Color(0xffF2F5FA);
+  static const Color backgroundColor = Color(0xffFAFAFA);
   static const Color forGroundColor = Color(0xFF222c3c);
   static const Color textColor = Color(0xFF292b46);
   static const Color text2Color = Color(0xFF4b4b69);
@@ -15,7 +15,11 @@ abstract class LightColors {
   static const Color yelloColor = Color(0xFFFDDD64);
   static const Color greenColor = Color(0xFF21b6b7);
   static const Color darkGreyColor = Color(0xFF787981);
-  static const Color greyColor = Color(0xFFBDBDBD);
+  static const Color greyColor = Color(0xFFE8E8E8);
+  static const Color selectedNavBarColor = Color(0xFF07337F);
+  static const Color unselectedNavBarColor = Color(0xFF333333);
+
+  static Color selectedColor = const Color(0xff0D5CE6).withValues(alpha: 0.1);
 }
 
 abstract class DarkColors {
@@ -33,5 +37,8 @@ abstract class DarkColors {
   static const Color orangeColor = Color(0xFFe8cb8c);
   static const Color greenColor = Color(0xFF21b6b7);
   static const Color darkGreyColor = Color(0xFF787981);
-  static const Color greyColor = Color(0xFFBDBDBD);
+  static const Color greyColor = Color(0xFFE8E8E8);
+  static const Color selectedNavBarColor = Color(0xFF07337F);
+  static const Color unselectedNavBarColor = Color(0xFF333333);
+  static Color selectedColor = const Color(0xff0D5CE6).withValues(alpha: 0.1);
 }

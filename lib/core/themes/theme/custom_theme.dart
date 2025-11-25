@@ -124,6 +124,17 @@ ThemeData lightTheme = ThemeData(
       ),
     ),
   ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: LightColors.themeColor,
+    elevation: 0,
+    selectedItemColor: LightColors.selectedNavBarColor,
+
+    unselectedItemColor: LightColors.unselectedNavBarColor,
+  ),
+  bottomAppBarTheme: const BottomAppBarThemeData(
+    color: LightColors.themeColor,
+    elevation: 0,
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: LightColors.buttonColor,
@@ -155,7 +166,16 @@ ThemeData darkTheme = ThemeData(
   fontFamily: kFontFamily,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: DarkColors.backgroundColor,
-  bottomAppBarTheme: const BottomAppBarThemeData(),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    selectedItemColor: DarkColors.selectedNavBarColor,
+    unselectedItemColor: DarkColors.unselectedNavBarColor,
+    backgroundColor: DarkColors.themeColor,
+    elevation: 0,
+  ),
+  bottomAppBarTheme: const BottomAppBarThemeData(
+    color: DarkColors.themeColor,
+    elevation: 0,
+  ),
   iconTheme: const IconThemeData(color: DarkColors.textColor),
   primaryColor: DarkColors.primaryColor,
   useMaterial3: true,
