@@ -55,11 +55,13 @@ extension HomeStatePatterns on HomeState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial value)?  initial,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial value)?  initial,TResult Function( ShowSearchBar value)?  showSearchBar,TResult Function( HideSearchBar value)?  hideSearchBar,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case Initial() when initial != null:
-return initial(_that);case _:
+return initial(_that);case ShowSearchBar() when showSearchBar != null:
+return showSearchBar(_that);case HideSearchBar() when hideSearchBar != null:
+return hideSearchBar(_that);case _:
   return orElse();
 
 }
@@ -77,11 +79,13 @@ return initial(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial value)  initial,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial value)  initial,required TResult Function( ShowSearchBar value)  showSearchBar,required TResult Function( HideSearchBar value)  hideSearchBar,}){
 final _that = this;
 switch (_that) {
 case Initial():
-return initial(_that);case _:
+return initial(_that);case ShowSearchBar():
+return showSearchBar(_that);case HideSearchBar():
+return hideSearchBar(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -98,11 +102,13 @@ return initial(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial value)?  initial,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial value)?  initial,TResult? Function( ShowSearchBar value)?  showSearchBar,TResult? Function( HideSearchBar value)?  hideSearchBar,}){
 final _that = this;
 switch (_that) {
 case Initial() when initial != null:
-return initial(_that);case _:
+return initial(_that);case ShowSearchBar() when showSearchBar != null:
+return showSearchBar(_that);case HideSearchBar() when hideSearchBar != null:
+return hideSearchBar(_that);case _:
   return null;
 
 }
@@ -119,10 +125,12 @@ return initial(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  showSearchBar,TResult Function()?  hideSearchBar,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case Initial() when initial != null:
-return initial();case _:
+return initial();case ShowSearchBar() when showSearchBar != null:
+return showSearchBar();case HideSearchBar() when hideSearchBar != null:
+return hideSearchBar();case _:
   return orElse();
 
 }
@@ -140,10 +148,12 @@ return initial();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  showSearchBar,required TResult Function()  hideSearchBar,}) {final _that = this;
 switch (_that) {
 case Initial():
-return initial();case _:
+return initial();case ShowSearchBar():
+return showSearchBar();case HideSearchBar():
+return hideSearchBar();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -160,10 +170,12 @@ return initial();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  showSearchBar,TResult? Function()?  hideSearchBar,}) {final _that = this;
 switch (_that) {
 case Initial() when initial != null:
-return initial();case _:
+return initial();case ShowSearchBar() when showSearchBar != null:
+return showSearchBar();case HideSearchBar() when hideSearchBar != null:
+return hideSearchBar();case _:
   return null;
 
 }
@@ -195,6 +207,70 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'HomeState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ShowSearchBar implements HomeState {
+  const ShowSearchBar();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ShowSearchBar);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'HomeState.showSearchBar()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class HideSearchBar implements HomeState {
+  const HideSearchBar();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HideSearchBar);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'HomeState.hideSearchBar()';
 }
 
 

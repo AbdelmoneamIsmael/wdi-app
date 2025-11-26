@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wdi/core/bloc/bloc_observer.dart';
 import '/core/const/app_const.dart';
 import '/core/model/app_model/app_model.dart';
 import '/core/utils/cache_helper.dart';
@@ -15,6 +17,7 @@ void main() async {
   await initLocalization();
   await CacheHelper.init();
   initializeGetIt();
+  Bloc.observer = MyBlocObserver();
   runApp(
     EasyLocalization(
       // startLocale: Locale('ar', 'SA'),

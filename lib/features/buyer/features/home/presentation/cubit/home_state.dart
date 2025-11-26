@@ -5,4 +5,6 @@ part 'home_state.freezed.dart';
 @freezed
 class HomeState with _$HomeState {
   const factory HomeState.initial() = Initial;
+  const factory HomeState.showSearchBar() = ShowSearchBar;
+  const factory HomeState.hideSearchBar() = HideSearchBar;
 }
