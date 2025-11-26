@@ -11,6 +11,7 @@ ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   scaffoldBackgroundColor: LightColors.backgroundColor,
   primaryColor: LightColors.primaryColor,
+  primaryColorLight: LightColors.lightPrimaryColor,
   useMaterial3: true,
   colorScheme: const ColorScheme.light().copyWith(
     primaryFixed: LightColors.themeColor,
@@ -172,6 +173,8 @@ ThemeData darkTheme = ThemeData(
     backgroundColor: DarkColors.themeColor,
     elevation: 0,
   ),
+  primaryColorDark: DarkColors.darkPrimaryColor,
+  primaryColorLight: DarkColors.lightPrimaryColor,
   bottomAppBarTheme: const BottomAppBarThemeData(
     color: DarkColors.themeColor,
     elevation: 0,

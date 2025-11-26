@@ -48,11 +48,20 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/cach_back.svg
+  String get cachBack => 'assets/icons/cach_back.svg';
+
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
 
+  /// File path: assets/icons/free_shipping.svg
+  String get freeShipping => 'assets/icons/free_shipping.svg';
+
   /// File path: assets/icons/home.svg
   String get home => 'assets/icons/home.svg';
+
+  /// File path: assets/icons/location.svg
+  String get location => 'assets/icons/location.svg';
 
   /// File path: assets/icons/main_cart.svg
   String get mainCart => 'assets/icons/main_cart.svg';
@@ -60,11 +69,40 @@ class $AssetsIconsGen {
   /// File path: assets/icons/menu.svg
   String get menu => 'assets/icons/menu.svg';
 
+  /// File path: assets/icons/menu2.svg
+  String get menu2 => 'assets/icons/menu2.svg';
+
+  /// File path: assets/icons/payment_security.svg
+  String get paymentSecurity => 'assets/icons/payment_security.svg';
+
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
 
+  /// File path: assets/icons/quality.svg
+  String get quality => 'assets/icons/quality.svg';
+
+  /// File path: assets/icons/star.svg
+  String get star => 'assets/icons/star.svg';
+
+  /// File path: assets/icons/support.svg
+  String get support => 'assets/icons/support.svg';
+
   /// List of all assets
-  List<String> get values => [cart, home, mainCart, menu, profile];
+  List<String> get values => [
+    cachBack,
+    cart,
+    freeShipping,
+    home,
+    location,
+    mainCart,
+    menu,
+    menu2,
+    paymentSecurity,
+    profile,
+    quality,
+    star,
+    support,
+  ];
 }
 
 class $AssetsTranslationsGen {
