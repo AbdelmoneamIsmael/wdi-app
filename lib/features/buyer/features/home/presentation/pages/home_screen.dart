@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:wdi/core/themes/colors/colors.dart';
-import 'package:wdi/core/themes/styles/app_text_style.dart';
-import 'package:wdi/core/utils/functions/get_hight.dart';
 import 'package:wdi/features/buyer/features/home/domain/entities/site_provider_entity.dart';
 import 'package:wdi/features/buyer/features/home/presentation/cubit/home_cubit.dart';
 import 'package:wdi/features/buyer/features/home/presentation/cubit/home_state.dart';
@@ -15,7 +11,6 @@ import 'package:wdi/features/buyer/features/home/presentation/view/super_offer.d
 import 'package:wdi/features/buyer/features/home/presentation/widgets/home_app_bar.dart';
 import 'package:wdi/features/buyer/features/home/presentation/widgets/site_provider_widget.dart';
 import 'package:wdi/features/buyer/features/home/presentation/widgets/store_location.dart';
-import 'package:wdi/gen/assets.gen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -29,7 +24,6 @@ class HomeScreen extends StatelessWidget {
           builder: (context, state) {
             return CustomScrollView(
               controller: context.read<HomeCubit>().scrollController,
-
               slivers: [
                 const HomeAppBar(),
                 const StoreLocation(),
@@ -37,7 +31,6 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     height: 71.h,
                     decoration: const BoxDecoration(color: Color(0xffFFF5EE)),
-
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
@@ -50,7 +43,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 const CategoriesView(),
                 const FlashView(),
                 const FlashProductsView(),

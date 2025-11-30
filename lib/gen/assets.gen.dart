@@ -54,6 +54,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
 
+  /// File path: assets/icons/chat.svg
+  String get chat => 'assets/icons/chat.svg';
+
+  /// File path: assets/icons/favourit.svg
+  String get favourit => 'assets/icons/favourit.svg';
+
   /// File path: assets/icons/free_shipping.svg
   String get freeShipping => 'assets/icons/free_shipping.svg';
 
@@ -63,8 +69,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/location.svg
   String get location => 'assets/icons/location.svg';
 
+  /// File path: assets/icons/location_mark.svg
+  String get locationMark => 'assets/icons/location_mark.svg';
+
   /// File path: assets/icons/main_cart.svg
   String get mainCart => 'assets/icons/main_cart.svg';
+
+  /// File path: assets/icons/market.svg
+  String get market => 'assets/icons/market.svg';
 
   /// File path: assets/icons/menu.svg
   String get menu => 'assets/icons/menu.svg';
@@ -81,27 +93,51 @@ class $AssetsIconsGen {
   /// File path: assets/icons/quality.svg
   String get quality => 'assets/icons/quality.svg';
 
+  /// File path: assets/icons/return_icon.svg
+  String get returnIcon => 'assets/icons/return_icon.svg';
+
+  /// File path: assets/icons/share.svg
+  String get share => 'assets/icons/share.svg';
+
+  /// File path: assets/icons/shipping.svg
+  String get shipping => 'assets/icons/shipping.svg';
+
   /// File path: assets/icons/star.svg
   String get star => 'assets/icons/star.svg';
 
   /// File path: assets/icons/support.svg
   String get support => 'assets/icons/support.svg';
 
+  /// File path: assets/icons/tamara_logo.svg
+  String get tamaraLogo => 'assets/icons/tamara_logo.svg';
+
+  /// File path: assets/icons/warnty.svg
+  String get warnty => 'assets/icons/warnty.svg';
+
   /// List of all assets
   List<String> get values => [
     cachBack,
     cart,
+    chat,
+    favourit,
     freeShipping,
     home,
     location,
+    locationMark,
     mainCart,
+    market,
     menu,
     menu2,
     paymentSecurity,
     profile,
     quality,
+    returnIcon,
+    share,
+    shipping,
     star,
     support,
+    tamaraLogo,
+    warnty,
   ];
 }
 

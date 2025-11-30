@@ -4,5 +4,7 @@
     "home": "Home",
     "cart": "Cart",
     "profile": "Profile",
-    "menu": "Menu"
+    "menu": "Menu",
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now"
 }

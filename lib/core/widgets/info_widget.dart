@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../themes/styles/app_text_style.dart';
 
-class InfoWidget extends StatelessWidget {
-  const InfoWidget({
+class InfoContainerWidget extends StatelessWidget {
+  const InfoContainerWidget({
     super.key,
     required this.title,
     required this.icon,

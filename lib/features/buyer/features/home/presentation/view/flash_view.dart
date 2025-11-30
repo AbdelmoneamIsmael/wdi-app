@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wdi/core/themes/styles/app_text_style.dart';
-import 'package:wdi/core/utils/functions/get_hight.dart';
+import 'package:wdi/core/widgets/end_time_widget.dart';
 
 class FlashView extends StatelessWidget {
   const FlashView({super.key});
@@ -27,91 +27,11 @@ class FlashView extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24.h),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 17.w, vertical: 9.h),
-            decoration: BoxDecoration(
-              color: const Color(0xffF97415).withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(
-                color: const Color(0xffF97415).withValues(alpha: 0.2),
-                width: 1.w,
+          EndsInWidget(
+            time: DateTime.now().difference(
+              DateTime.now().add(
+                const Duration(hours: 23, minutes: 59, seconds: 59),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              spacing: 8,
-              children: [
-                Icon(
-                  Icons.access_time,
-                  color: const Color(0xffF97415),
-                  size: 20.sp,
-                ),
-                Text(
-                  'Ends in :',
-                  style: AppTextStyles.semiBold(
-                    context,
-                  ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
-                ),
-                Container(
-                  padding: EdgeInsets.all(7.w),
-                  decoration: BoxDecoration(
-                    color: const Color(0xffF97415),
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: Text(
-                    '23',
-                    style: AppTextStyles.bold(context).copyWith(
-                      fontSize: 17.sp,
-                      color: Colors.white,
-                      height: getTextHeight(17, 28),
-                    ),
-                  ),
-                ),
-                Text(
-                  ':',
-                  style: AppTextStyles.semiBold(
-                    context,
-                  ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
-                ),
-                Container(
-                  padding: EdgeInsets.all(7.w),
-                  decoration: BoxDecoration(
-                    color: const Color(0xffF97415),
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: Text(
-                    '59',
-                    style: AppTextStyles.bold(context).copyWith(
-                      fontSize: 17.sp,
-                      color: Colors.white,
-                      height: getTextHeight(17, 28),
-                    ),
-                  ),
-                ),
-                Text(
-                  ':',
-                  style: AppTextStyles.semiBold(
-                    context,
-                  ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
-                ),
-                Container(
-                  padding: EdgeInsets.all(7.w),
-                  decoration: BoxDecoration(
-                    color: const Color(0xffF97415),
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: Text(
-                    '59',
-                    style: AppTextStyles.bold(context).copyWith(
-                      fontSize: 17.sp,
-                      color: Colors.white,
-                      height: getTextHeight(17, 28),
-                    ),
-                  ),
-                ),
-              ],
             ),
           ),
 
@@ -121,3 +41,4 @@ class FlashView extends StatelessWidget {
     );
   }
 }
+

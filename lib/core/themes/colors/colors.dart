@@ -5,10 +5,10 @@ abstract class LightColors {
   static const Color backgroundColor = Color(0xffFAFAFA);
   static const Color forGroundColor = Color(0xFF222c3c);
   static const Color textColor = Color(0xFF292b46);
-  static const Color text2Color = Color(0xFF707070);
+  static const Color text2Color = Color(0xFF71717A);
   static const Color primaryColor = Color(0xFF7C3BED);
   static const Color lightPrimaryColor = Color(0xFFF2EBFF);
-  static const Color buttonColor = Color(0xFF0C8178);
+  static const Color buttonColor = Color(0xFF7C3BED);
   static const Color secondButtonColor = Color(0xFF11047A);
   static const Color secondContainerColor = Color(0xFFEAEDFA);
   static const Color containerColor = Color(0xFFD9D9D9);
@@ -19,6 +19,7 @@ abstract class LightColors {
   static const Color greyColor = Color(0xFFE8E8E8);
   static const Color selectedNavBarColor = Color(0xFF07337F);
   static const Color unselectedNavBarColor = Color(0xFF333333);
+  static const Color dividerColor = Color(0xFFE4E4E7);
 
   static Color selectedColor = const Color(0xff0D5CE6).withValues(alpha: 0.1);
 }
@@ -43,5 +44,6 @@ abstract class DarkColors {
   static const Color greyColor = Color(0xFFE8E8E8);
   static const Color selectedNavBarColor = Color(0xFF07337F);
   static const Color unselectedNavBarColor = Color(0xFF333333);
+  static const Color dividerColor = Color(0xFFE5E5E5);
   static Color selectedColor = const Color(0xff0D5CE6).withValues(alpha: 0.1);
 }

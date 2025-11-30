@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wdi/core/bloc/bloc_observer.dart';
+import 'package:wdi/features/buyer/features/product_details/presentation/cubit/product_details_cubit.dart';
+import 'package:wdi/features/buyer/features/product_details/presentation/pages/product_details.dart';
 import '../../features/buyer/features/main/presentation/cubit/main_cubit.dart';
 import '../../features/buyer/features/main/presentation/pages/main_screen.dart';
 import '../const/app_const.dart';
@@ -25,6 +27,22 @@ class PageRoutes {
           return BlocProvider(
             create: (context) => MainCubit(),
             child: const MainScreen(),
+          );
+        },
+      ),
+      
+      GoRoute(
+        name: PagesKeys.productDetailsScreen,
+        path: '/${PagesKeys.productDetailsScreen}/:productId',
+        builder: (context, state) {
+          final productId = state.pathParameters['productId'] ?? '';
+          return BlocProvider(
+            create: (context) {
+              return ProductDetailsCubit(
+                productId: productId,
+              );
+            },
+            child: const ProductDetailsScreen(),
           );
         },
       ),
