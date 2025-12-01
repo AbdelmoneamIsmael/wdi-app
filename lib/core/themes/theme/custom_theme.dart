@@ -66,36 +66,38 @@ ThemeData lightTheme = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
+
+    fillColor: const Color(0xffFAFAFA),
     prefixIconColor: LightColors.greyColor,
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7.r),
-      borderSide: const BorderSide(width: 1, color: LightColors.greyColor),
+      borderRadius: BorderRadius.circular(10.r),
+      borderSide: const BorderSide(width: 1, color: Color(0xffE4E4E7)),
     ),
     contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7.r),
-      borderSide: const BorderSide(width: 1, color: LightColors.greyColor),
+      borderRadius: BorderRadius.circular(10.r),
+      borderSide: const BorderSide(width: 1, color: Color(0xffE4E4E7)),
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7.r),
+      borderRadius: BorderRadius.circular(10.r),
       borderSide: const BorderSide(width: 1, color: LightColors.primaryColor),
     ),
     disabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7.r),
-      borderSide: const BorderSide(width: 1, color: LightColors.greyColor),
+      borderRadius: BorderRadius.circular(710.r),
+      borderSide: const BorderSide(width: 1, color: Color(0xffE4E4E7)),
     ),
     errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7.r),
+      borderRadius: BorderRadius.circular(10.r),
       borderSide: const BorderSide(width: 1, color: LightColors.redColor),
     ),
     focusedErrorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7.r),
+      borderRadius: BorderRadius.circular(10.r),
       borderSide: const BorderSide(width: 1, color: LightColors.redColor),
     ),
     hintStyle: TextStyle(
       fontFamily: kFontFamily,
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w500,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w400,
       color: LightColors.greyColor,
     ),
   ),

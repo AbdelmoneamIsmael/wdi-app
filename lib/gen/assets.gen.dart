@@ -57,6 +57,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/chat.svg
   String get chat => 'assets/icons/chat.svg';
 
+  /// File path: assets/icons/coupon.svg
+  String get coupon => 'assets/icons/coupon.svg';
+
   /// File path: assets/icons/favourit.svg
   String get favourit => 'assets/icons/favourit.svg';
 
@@ -119,6 +122,7 @@ class $AssetsIconsGen {
     cachBack,
     cart,
     chat,
+    coupon,
     favourit,
     freeShipping,
     home,

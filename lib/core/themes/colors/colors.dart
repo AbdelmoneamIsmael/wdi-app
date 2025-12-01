@@ -12,11 +12,11 @@ abstract class LightColors {
   static const Color secondButtonColor = Color(0xFF11047A);
   static const Color secondContainerColor = Color(0xFFEAEDFA);
   static const Color containerColor = Color(0xFFD9D9D9);
-  static const Color redColor = Color(0xFFFE4842);
+  static const Color redColor = Color(0xFFEF4343);
   static const Color yelloColor = Color(0xFFFDDD64);
   static const Color greenColor = Color(0xFF21b6b7);
   static const Color darkGreyColor = Color(0xFF787981);
-  static const Color greyColor = Color(0xFFE8E8E8);
+  static const Color greyColor = Color(0xFF71717A);
   static const Color selectedNavBarColor = Color(0xFF07337F);
   static const Color unselectedNavBarColor = Color(0xFF333333);
   static const Color dividerColor = Color(0xFFE4E4E7);

@@ -121,6 +121,7 @@ class AppTextField extends StatelessWidget {
       style: AppTextStyles.lablell(context),
       decoration: InputDecoration(
         hintText: hint,
+         
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
       ),

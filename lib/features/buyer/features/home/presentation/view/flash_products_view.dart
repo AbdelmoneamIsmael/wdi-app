@@ -14,7 +14,7 @@ class FlashProductsView extends StatelessWidget {
       sliver: SliverGrid.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 171 / 371,
+          childAspectRatio: 171 / 400,
           mainAxisSpacing: 16,
           crossAxisSpacing: 16,
         ),

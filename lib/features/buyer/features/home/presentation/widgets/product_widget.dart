@@ -199,7 +199,6 @@ class ProductWidget extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Theme.of(context).primaryColor,
                           foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(vertical: 12.h),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.r),
                           ),
@@ -207,23 +206,30 @@ class ProductWidget extends StatelessWidget {
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
                               Assets.icons.cart,
-                              width: 20.w,
-                              height: 20.h,
+                              width: 14.sp,
+                              height: 14.sp,
+                              fit: BoxFit.scaleDown,
                               colorFilter: const ColorFilter.mode(
                                 Colors.white,
                                 BlendMode.srcIn,
                               ),
                             ),
                             SizedBox(width: 8.w),
-                            Text(
-                              'Add to Cart',
-                              style: AppTextStyles.medium(context).copyWith(
-                                color: Colors.white,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
+                            Expanded(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  'Add to Cart',
+                                  style: AppTextStyles.medium(context).copyWith(
+                                    color: Colors.white,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                               ),
                             ),
                           ],

@@ -768,11 +768,13 @@ class InfoContainerBanner extends StatelessWidget {
     required this.child,
     required this.title,
     required this.icon,
+    this.leading,
     this.onTap,
   });
   final Widget child;
   final String title;
-  final String icon;
+  final String? icon;
+  final Widget? leading;
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
@@ -790,16 +792,17 @@ class InfoContainerBanner extends StatelessWidget {
           children: [
             Row(
               children: [
-                SvgPicture.asset(
-                  icon,
-                  width: 24.w,
-                  height: 24.h,
-                  fit: BoxFit.scaleDown,
-                  colorFilter: const ColorFilter.mode(
-                    LightColors.primaryColor,
-                    BlendMode.srcIn,
-                  ),
-                ),
+                leading ??
+                    SvgPicture.asset(
+                      icon ?? '',
+                      width: 24.w,
+                      height: 24.h,
+                      fit: BoxFit.scaleDown,
+                      colorFilter: const ColorFilter.mode(
+                        LightColors.primaryColor,
+                        BlendMode.srcIn,
+                      ),
+                    ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: title.toText(
@@ -824,8 +827,8 @@ class InfoContainerBanner extends StatelessWidget {
 }
 
 class QuantityWidget extends StatelessWidget {
-  const QuantityWidget({super.key});
-
+  const QuantityWidget({super.key, this.withBorder = true});
+  final bool withBorder;
   @override
   Widget build(BuildContext context) {
     return UnconstrainedBox(
@@ -846,22 +849,26 @@ class QuantityWidget extends StatelessWidget {
               size: 20.sp,
               color: Theme.of(context).textTheme.bodyMedium?.color,
             ).toPaddingOnly(start: 10),
-            VerticalDivider(
-              color: Theme.of(context).dividerColor,
-              thickness: 1,
-              width: 1,
-            ),
+            withBorder
+                ? VerticalDivider(
+                    color: Theme.of(context).dividerColor,
+                    thickness: 1,
+                    width: 1,
+                  )
+                : const SizedBox.shrink(),
             Text(
               '1',
               style: AppTextStyles.semiBold(
                 context,
               ).copyWith(fontSize: 16.sp, height: 24 / 15),
             ).toPaddingHorizontal(horizontal: 8.w),
-            VerticalDivider(
-              color: Theme.of(context).dividerColor,
-              width: 1,
-              thickness: 1,
-            ),
+            withBorder
+                ? VerticalDivider(
+                    color: Theme.of(context).dividerColor,
+                    width: 1,
+                    thickness: 1,
+                  )
+                : const SizedBox.shrink(),
             Icon(
               Icons.add,
               size: 20.sp,
