@@ -35,7 +35,7 @@ class MainScreen extends StatelessWidget {
                     context,
                   ).bottomNavigationBarTheme.backgroundColor,
                   border: const Border(
-                    top: BorderSide(color: LightColors.greyColor, width: 1),
+                    top: BorderSide(color: Color(0xffE8E8E8), width: 1),
                   ),
                 ),
                 child: SafeArea(

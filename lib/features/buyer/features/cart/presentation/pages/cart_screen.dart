@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wdi/core/extension/sliver_widget.dart';
 import 'package:wdi/core/extension/strings_extention.dart';
+import 'package:wdi/core/extension/widget_widgets.dart';
+import 'package:wdi/core/routes/pages_keys.dart';
 import 'package:wdi/core/themes/colors/colors.dart';
 import 'package:wdi/core/themes/styles/app_text_style.dart';
 import 'package:wdi/core/utils/functions/get_hight.dart';
@@ -19,6 +22,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('screen width: ${MediaQuery.of(context).size.width}');
     final productList = ProductSampleData.generateSampleProducts();
     return Scaffold(
       appBar: PreferredSize(
@@ -92,7 +96,9 @@ class CartScreen extends StatelessWidget {
             const SizedBox(height: 20).toSliver(),
             const OrderSummaryWidget().toSliver(),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(PagesKeys.checkOut);
+              },
               child: const Text('Proceed to Checkout'),
             ).toSliver().sliverPaddingSymmetric(vertical: 20),
             SizedBox(height: (56 - 20).h).toSliver(),
@@ -105,9 +111,11 @@ class CartScreen extends StatelessWidget {
                 .toSliver(),
             const SizedBox(height: 24).toSliver(),
             SliverGrid.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 171 / 400,
+                childAspectRatio: MediaQuery.of(context).size.width < 375
+                    ? 171 / 435
+                    : 171 / 380,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
@@ -123,8 +131,9 @@ class CartScreen extends StatelessWidget {
 }
 
 class OrderSummaryWidget extends StatelessWidget {
-  const OrderSummaryWidget({super.key});
-
+  const OrderSummaryWidget({super.key, this.headerWidget, this.footerText});
+  final Widget? headerWidget;
+  final String? footerText;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -143,23 +152,13 @@ class OrderSummaryWidget extends StatelessWidget {
             ).copyWith(fontSize: 16.sp, height: 24 / 16),
           ),
           const SizedBox(height: 16),
-          _buildOrderSummaryItem(
-            context: context,
-            title: 'Subtotal',
-            value: 'AED 299.88',
-          ),
+          if (headerWidget != null) headerWidget!,
+          const SizedBox(height: 16),
+          const OrderSummaryItemWidget(title: 'Subtotal', value: 'AED 299.88'),
           const SizedBox(height: 12),
-          _buildOrderSummaryItem(
-            context: context,
-            title: 'Shipping',
-            value: 'AED 10.00',
-          ),
+          const OrderSummaryItemWidget(title: 'Shipping', value: 'AED 10.00'),
           const SizedBox(height: 12),
-          _buildOrderSummaryItem(
-            context: context,
-            title: 'VAT (15%)',
-            value: 'AED 44.98',
-          ),
+          const OrderSummaryItemWidget(title: 'VAT (15%)', value: 'AED 44.98'),
           Divider(
             color: Theme.of(context).dividerColor,
             height: 32,
@@ -187,24 +186,33 @@ class OrderSummaryWidget extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Text(
-              'VAT included in total price',
+              footerText ?? 'VAT included in total price',
+              textAlign: TextAlign.center,
               style: AppTextStyles.regular(context).copyWith(
                 fontSize: 12.sp,
                 height: 16 / 12,
+
                 color: LightColors.text2Color,
               ),
-            ),
+            ).toPaddingHorizontal(horizontal: 18),
           ),
         ],
       ),
     );
   }
+}
 
-  Widget _buildOrderSummaryItem({
-    required BuildContext context,
-    required String title,
-    required String value,
-  }) {
+class OrderSummaryItemWidget extends StatelessWidget {
+  const OrderSummaryItemWidget({
+    super.key,
+    required this.title,
+    required this.value,
+  });
+  final String title;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       children: [
         title.toText(
@@ -275,7 +283,7 @@ class CouponWidget extends StatelessWidget {
               Flexible(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text('Apply'),
+                  child: const FittedBox(child: Text('Apply')),
                 ),
               ),
             ],
@@ -345,24 +353,22 @@ class CartItemWidget extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              Row(
-                children: [
-                  const QuantityWidget(withBorder: false),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        'Only 5 left ',
-                        style: AppTextStyles.regular(context).copyWith(
-                          fontSize: 14.sp,
-                          height: 20 / 14,
-                          color: LightColors.text2Color,
-                        ),
-                      ),
-                    ),
+              const FittedBox(
+                fit: BoxFit.scaleDown,
+                child: QuantityWidget(withBorder: false),
+              ),
+
+              SizedBox(height: 8.w),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  'Only 5 left ',
+                  style: AppTextStyles.regular(context).copyWith(
+                    fontSize: 14.sp,
+                    height: 20 / 14,
+                    color: LightColors.text2Color,
                   ),
-                ],
+                ),
               ),
               const SizedBox(height: 13),
               'AED 299.88'.toText(

@@ -12,9 +12,11 @@ class FlashProductsView extends StatelessWidget {
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: 8.w),
       sliver: SliverGrid.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 171 / 400,
+          childAspectRatio: MediaQuery.of(context).size.width < 375
+              ? 171 / 425
+              : 171 / 385,
           mainAxisSpacing: 16,
           crossAxisSpacing: 16,
         ),

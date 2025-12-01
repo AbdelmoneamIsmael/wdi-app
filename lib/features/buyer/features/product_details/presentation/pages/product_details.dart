@@ -199,7 +199,9 @@ class ProductDetailsScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 16.w),
-                          Text('add_to_cart'.tr()),
+                          Expanded(
+                            child: FittedBox(child: Text('add_to_cart'.tr())),
+                          ),
                         ],
                       ),
                     ),
@@ -212,7 +214,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
                   BorderButton(
                     child: SvgPicture.asset(
-                      Assets.icons.favourit,
+                      Assets.icons.share,
                       fit: BoxFit.scaleDown,
                     ),
                   ),
@@ -719,25 +721,27 @@ class InfoContainerBannerOption extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: AppTextStyles.medium(
-                context,
-              ).copyWith(fontSize: 15.sp, height: 24 / 15),
-            ),
-            Text(
-              subtitle,
-              style: AppTextStyles.regular(context).copyWith(
-                fontSize: 13.7.sp,
-                height: 24 / 15,
-                color: LightColors.text2Color,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: AppTextStyles.medium(
+                  context,
+                ).copyWith(fontSize: 15.sp, height: 24 / 15),
               ),
-            ),
-          ],
+              Text(
+                subtitle,
+                style: AppTextStyles.regular(context).copyWith(
+                  fontSize: 13.7.sp,
+                  height: 24 / 15,
+                  color: LightColors.text2Color,
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );

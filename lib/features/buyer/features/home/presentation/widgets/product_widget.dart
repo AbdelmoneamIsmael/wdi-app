@@ -149,7 +149,7 @@ class ProductWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 12.h),
+                    Expanded(child: SizedBox(height: 12.h)),
                     // Price
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -173,15 +173,20 @@ class ProductWidget extends StatelessWidget {
                         ),
                         if (product.hasDiscount) ...[
                           SizedBox(width: 8.w),
-                          Text(
-                            '${product.originalPrice.toStringAsFixed(2)} Đ',
-                            style: AppTextStyles.regular(context).copyWith(
-                              fontSize: 10.sp,
-                              height: 20 / 10,
-                              color: isDark
-                                  ? DarkColors.text2Color
-                                  : LightColors.text2Color,
-                              decoration: TextDecoration.lineThrough,
+                          Expanded(
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                '${product.originalPrice.toStringAsFixed(2)} Đ',
+                                style: AppTextStyles.regular(context).copyWith(
+                                  fontSize: 10.sp,
+                                  height: 20 / 10,
+                                  color: isDark
+                                      ? DarkColors.text2Color
+                                      : LightColors.text2Color,
+                                  decoration: TextDecoration.lineThrough,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -202,6 +207,7 @@ class ProductWidget extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.r),
                           ),
+                          fixedSize: Size(double.infinity, 35.h),
                           elevation: 0,
                         ),
                         child: Row(

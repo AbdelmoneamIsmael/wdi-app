@@ -48,17 +48,26 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/apple_pay.svg
+  String get applePay => 'assets/icons/apple_pay.svg';
+
   /// File path: assets/icons/cach_back.svg
   String get cachBack => 'assets/icons/cach_back.svg';
 
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
 
+  /// File path: assets/icons/cash.svg
+  String get cash => 'assets/icons/cash.svg';
+
   /// File path: assets/icons/chat.svg
   String get chat => 'assets/icons/chat.svg';
 
   /// File path: assets/icons/coupon.svg
   String get coupon => 'assets/icons/coupon.svg';
+
+  /// File path: assets/icons/credit_card.svg
+  String get creditCard => 'assets/icons/credit_card.svg';
 
   /// File path: assets/icons/favourit.svg
   String get favourit => 'assets/icons/favourit.svg';
@@ -105,6 +114,15 @@ class $AssetsIconsGen {
   /// File path: assets/icons/shipping.svg
   String get shipping => 'assets/icons/shipping.svg';
 
+  /// File path: assets/icons/shipping_car.svg
+  String get shippingCar => 'assets/icons/shipping_car.svg';
+
+  /// File path: assets/icons/shipping_flash.svg
+  String get shippingFlash => 'assets/icons/shipping_flash.svg';
+
+  /// File path: assets/icons/shipping_stander.svg
+  String get shippingStander => 'assets/icons/shipping_stander.svg';
+
   /// File path: assets/icons/star.svg
   String get star => 'assets/icons/star.svg';
 
@@ -114,15 +132,21 @@ class $AssetsIconsGen {
   /// File path: assets/icons/tamara_logo.svg
   String get tamaraLogo => 'assets/icons/tamara_logo.svg';
 
+  /// File path: assets/icons/walet.svg
+  String get walet => 'assets/icons/walet.svg';
+
   /// File path: assets/icons/warnty.svg
   String get warnty => 'assets/icons/warnty.svg';
 
   /// List of all assets
   List<String> get values => [
+    applePay,
     cachBack,
     cart,
+    cash,
     chat,
     coupon,
+    creditCard,
     favourit,
     freeShipping,
     home,
@@ -138,9 +162,13 @@ class $AssetsIconsGen {
     returnIcon,
     share,
     shipping,
+    shippingCar,
+    shippingFlash,
+    shippingStander,
     star,
     support,
     tamaraLogo,
+    walet,
     warnty,
   ];
 }

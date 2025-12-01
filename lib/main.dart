@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,12 +9,13 @@ import '/core/model/app_model/app_model.dart';
 import '/core/utils/cache_helper.dart';
 import '/core/utils/functions/initialize_getit/initialize_getit.dart';
 import 'wdi_app.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   await initLocalization();
-   initDebugMode();
+  initDebugMode();
   await initLocalization();
   await CacheHelper.init();
   initializeGetIt();
@@ -25,7 +27,10 @@ void main() async {
       path:
           'assets/translations', // <-- change the path of the translation files
       fallbackLocale: const Locale('ar', 'SA'),
-      child: const WDIApp(),
+      child: DevicePreview(
+        enabled: false,
+        builder: (context) => const WDIApp(),
+      ),
     ),
   );
 }

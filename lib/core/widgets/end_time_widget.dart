@@ -21,77 +21,84 @@ class EndsInWidget extends StatelessWidget {
           width: 1.w,
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        spacing: 8,
-        children: [
-          Icon(Icons.access_time, color: const Color(0xffF97415), size: 20.sp),
-          Text(
-            'Ends in :',
-            style: AppTextStyles.semiBold(
-              context,
-            ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
-          ),
-          Container(
-            padding: EdgeInsets.all(7.w),
-            decoration: BoxDecoration(
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          spacing: 8,
+          children: [
+            Icon(
+              Icons.access_time,
               color: const Color(0xffF97415),
-              borderRadius: BorderRadius.circular(10.r),
+              size: 20.sp,
             ),
-            child: Text(
-              hours,
-              style: AppTextStyles.bold(context).copyWith(
-                fontSize: 17.sp,
-                color: Colors.white,
-                height: getTextHeight(17, 28),
+            Text(
+              'Ends in :',
+              style: AppTextStyles.semiBold(
+                context,
+              ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
+            ),
+            Container(
+              padding: EdgeInsets.all(7.w),
+              decoration: BoxDecoration(
+                color: const Color(0xffF97415),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Text(
+                hours,
+                style: AppTextStyles.bold(context).copyWith(
+                  fontSize: 17.sp,
+                  color: Colors.white,
+                  height: getTextHeight(17, 28),
+                ),
               ),
             ),
-          ),
-          Text(
-            ':',
-            style: AppTextStyles.semiBold(
-              context,
-            ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
-          ),
-          Container(
-            padding: EdgeInsets.all(7.w),
-            decoration: BoxDecoration(
-              color: const Color(0xffF97415),
-              borderRadius: BorderRadius.circular(10.r),
+            Text(
+              ':',
+              style: AppTextStyles.semiBold(
+                context,
+              ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
             ),
-            child: Text(
-              minutes,
-              style: AppTextStyles.bold(context).copyWith(
-                fontSize: 17.sp,
-                color: Colors.white,
-                height: getTextHeight(17, 28),
+            Container(
+              padding: EdgeInsets.all(7.w),
+              decoration: BoxDecoration(
+                color: const Color(0xffF97415),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Text(
+                minutes,
+                style: AppTextStyles.bold(context).copyWith(
+                  fontSize: 17.sp,
+                  color: Colors.white,
+                  height: getTextHeight(17, 28),
+                ),
               ),
             ),
-          ),
-          Text(
-            ':',
-            style: AppTextStyles.semiBold(
-              context,
-            ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
-          ),
-          Container(
-            padding: EdgeInsets.all(7.w),
-            decoration: BoxDecoration(
-              color: const Color(0xffF97415),
-              borderRadius: BorderRadius.circular(10.r),
+            Text(
+              ':',
+              style: AppTextStyles.semiBold(
+                context,
+              ).copyWith(fontSize: 16.sp, color: const Color(0xffF97415)),
             ),
-            child: Text(
-              seconds,
-              style: AppTextStyles.bold(context).copyWith(
-                fontSize: 17.sp,
-                color: Colors.white,
-                height: getTextHeight(17, 28),
+            Container(
+              padding: EdgeInsets.all(7.w),
+              decoration: BoxDecoration(
+                color: const Color(0xffF97415),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Text(
+                seconds,
+                style: AppTextStyles.bold(context).copyWith(
+                  fontSize: 17.sp,
+                  color: Colors.white,
+                  height: getTextHeight(17, 28),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -17,6 +17,7 @@ abstract class LightColors {
   static const Color greenColor = Color(0xFF21b6b7);
   static const Color darkGreyColor = Color(0xFF787981);
   static const Color greyColor = Color(0xFF71717A);
+  static const Color lightGreyColor = Color(0xFFE4E4E7);
   static const Color selectedNavBarColor = Color(0xFF07337F);
   static const Color unselectedNavBarColor = Color(0xFF333333);
   static const Color dividerColor = Color(0xFFE4E4E7);

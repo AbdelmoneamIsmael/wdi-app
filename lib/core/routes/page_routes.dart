@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wdi/core/bloc/bloc_observer.dart';
+import 'package:wdi/features/buyer/features/checkout/presentation/cubit/checkout_cubit.dart';
+import 'package:wdi/features/buyer/features/checkout/presentation/pages/check_out_screen.dart';
 import 'package:wdi/features/buyer/features/product_details/presentation/cubit/product_details_cubit.dart';
 import 'package:wdi/features/buyer/features/product_details/presentation/pages/product_details.dart';
 import '../../features/buyer/features/main/presentation/cubit/main_cubit.dart';
@@ -46,6 +48,22 @@ class PageRoutes {
           );
         },
       ),
+      GoRoute(
+        name: PagesKeys.checkOut,
+        path: '/${PagesKeys.checkOut}',
+        builder: (context, state) {
+          
+          return BlocProvider(
+            create: (context) {
+              return CheckoutCubit(
+              );
+            },
+            child: const CheckOutScreen(),
+          );
+        },
+      ),
+
+
     ],
   );
   static void clearAndNavigate(String path) {
