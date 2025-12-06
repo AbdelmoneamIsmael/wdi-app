@@ -8,17 +8,19 @@ class PrimaryContainer extends StatelessWidget {
     this.padding,
     this.margin,
     this.borderRadius,
+    this.decoration,
   });
   final Widget child;
   final EdgeInsetsGeometry? padding, margin;
   final BorderRadiusGeometry? borderRadius;
+  final ShapeDecoration? decoration;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: padding ?? const EdgeInsets.all(25).w,
       margin: margin,
 
-      decoration: BoxDecoration(
+      decoration: decoration ?? BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(color: Theme.of(context).dividerColor, width: 1),
       ),

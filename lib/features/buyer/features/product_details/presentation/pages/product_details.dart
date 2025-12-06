@@ -699,10 +699,12 @@ class InfoContainerBannerOption extends StatelessWidget {
     required this.subtitle,
     required this.icon,
     required this.onTap,
+    this.leading,
   });
   final String title;
   final String subtitle;
-  final String icon;
+  final String? icon;
+  final Widget? leading;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
@@ -710,16 +712,17 @@ class InfoContainerBannerOption extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SvgPicture.asset(
-          icon,
-          width: 20.w,
-          height: 20.h,
-          fit: BoxFit.scaleDown,
-          colorFilter: const ColorFilter.mode(
-            LightColors.text2Color,
-            BlendMode.srcIn,
-          ),
-        ),
+        leading ??
+            SvgPicture.asset(
+              icon ?? '',
+              width: 20.w,
+              height: 20.h,
+              fit: BoxFit.scaleDown,
+              colorFilter: const ColorFilter.mode(
+                LightColors.text2Color,
+                BlendMode.srcIn,
+              ),
+            ),
         const SizedBox(width: 12),
         Expanded(
           child: Column(

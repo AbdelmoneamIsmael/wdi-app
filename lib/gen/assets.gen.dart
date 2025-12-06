@@ -84,6 +84,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/free_shipping.svg
   String get freeShipping => 'assets/icons/free_shipping.svg';
 
+  /// File path: assets/icons/gift.svg
+  String get gift => 'assets/icons/gift.svg';
+
   /// File path: assets/icons/home.svg
   String get home => 'assets/icons/home.svg';
 
@@ -144,6 +147,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/star.svg
   String get star => 'assets/icons/star.svg';
 
+  /// File path: assets/icons/star_gift.svg
+  String get starGift => 'assets/icons/star_gift.svg';
+
+  /// File path: assets/icons/static.svg
+  String get static => 'assets/icons/static.svg';
+
   /// File path: assets/icons/support.svg
   String get support => 'assets/icons/support.svg';
 
@@ -173,6 +182,7 @@ class $AssetsIconsGen {
     edit,
     favourit,
     freeShipping,
+    gift,
     home,
     location,
     locationMark,
@@ -193,6 +203,8 @@ class $AssetsIconsGen {
     shippingFlash,
     shippingStander,
     star,
+    starGift,
+    static,
     support,
     tamaraLogo,
     user,
