@@ -15,11 +15,12 @@ class PrimaryContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: padding ?? const EdgeInsets.all(22).w,
+      padding: padding ?? const EdgeInsets.all(25).w,
       margin: margin,
+
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primaryContainer,
-        borderRadius: borderRadius ?? BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: Theme.of(context).dividerColor, width: 1),
       ),
       child: child,
     );

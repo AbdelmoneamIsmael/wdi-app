@@ -51,6 +51,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/apple_pay.svg
   String get applePay => 'assets/icons/apple_pay.svg';
 
+  /// File path: assets/icons/ask.svg
+  String get ask => 'assets/icons/ask.svg';
+
   /// File path: assets/icons/cach_back.svg
   String get cachBack => 'assets/icons/cach_back.svg';
 
@@ -84,6 +87,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/location_mark.svg
   String get locationMark => 'assets/icons/location_mark.svg';
 
+  /// File path: assets/icons/logout.svg
+  String get logout => 'assets/icons/logout.svg';
+
+  /// File path: assets/icons/loyalty.svg
+  String get loyalty => 'assets/icons/loyalty.svg';
+
   /// File path: assets/icons/main_cart.svg
   String get mainCart => 'assets/icons/main_cart.svg';
 
@@ -95,6 +104,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/menu2.svg
   String get menu2 => 'assets/icons/menu2.svg';
+
+  /// File path: assets/icons/notification.svg
+  String get notification => 'assets/icons/notification.svg';
 
   /// File path: assets/icons/payment_security.svg
   String get paymentSecurity => 'assets/icons/payment_security.svg';
@@ -132,6 +144,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/tamara_logo.svg
   String get tamaraLogo => 'assets/icons/tamara_logo.svg';
 
+  /// File path: assets/icons/user.svg
+  String get user => 'assets/icons/user.svg';
+
   /// File path: assets/icons/walet.svg
   String get walet => 'assets/icons/walet.svg';
 
@@ -141,6 +156,7 @@ class $AssetsIconsGen {
   /// List of all assets
   List<String> get values => [
     applePay,
+    ask,
     cachBack,
     cart,
     cash,
@@ -152,10 +168,13 @@ class $AssetsIconsGen {
     home,
     location,
     locationMark,
+    logout,
+    loyalty,
     mainCart,
     market,
     menu,
     menu2,
+    notification,
     paymentSecurity,
     profile,
     quality,
@@ -168,6 +187,7 @@ class $AssetsIconsGen {
     star,
     support,
     tamaraLogo,
+    user,
     walet,
     warnty,
   ];

@@ -20,6 +20,7 @@ class AppTextFieldWithTitle extends StatelessWidget {
     this.fillColor,
     this.prefixIcon,
     this.suffixIcon,
+    this.isRequired = false,
   });
   final String title, hint;
   final bool scure, enabeld, readOnly;
@@ -32,22 +33,24 @@ class AppTextFieldWithTitle extends StatelessWidget {
   final int maxLines;
   final Widget? prefixIcon, suffixIcon;
   final void Function(String)? onChanged;
+  final bool isRequired;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
           children: [
-            Text(title, style: AppTextStyles.lablell(context)),
-            Text(
-              '*',
-              style: AppTextStyles.lablell(
-                context,
-              ).copyWith(color: Theme.of(context).primaryColor),
-            ),
+            Text(title, style: AppTextStyles.medium(context)),
+            if (isRequired)
+              Text(
+                '*',
+                style: AppTextStyles.lablell(
+                  context,
+                ).copyWith(color: Theme.of(context).primaryColor),
+              ),
           ],
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 11),
         AppTextField(
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
@@ -121,7 +124,7 @@ class AppTextField extends StatelessWidget {
       style: AppTextStyles.lablell(context),
       decoration: InputDecoration(
         hintText: hint,
-         
+
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
       ),
