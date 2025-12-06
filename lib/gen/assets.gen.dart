@@ -72,6 +72,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/credit_card.svg
   String get creditCard => 'assets/icons/credit_card.svg';
 
+  /// File path: assets/icons/delete.svg
+  String get delete => 'assets/icons/delete.svg';
+
+  /// File path: assets/icons/edit.svg
+  String get edit => 'assets/icons/edit.svg';
+
   /// File path: assets/icons/favourit.svg
   String get favourit => 'assets/icons/favourit.svg';
 
@@ -163,6 +169,8 @@ class $AssetsIconsGen {
     chat,
     coupon,
     creditCard,
+    delete,
+    edit,
     favourit,
     freeShipping,
     home,
