@@ -78,6 +78,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/edit.svg
   String get edit => 'assets/icons/edit.svg';
 
+  /// File path: assets/icons/email.svg
+  String get email => 'assets/icons/email.svg';
+
   /// File path: assets/icons/favourit.svg
   String get favourit => 'assets/icons/favourit.svg';
 
@@ -119,6 +122,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/payment_security.svg
   String get paymentSecurity => 'assets/icons/payment_security.svg';
+
+  /// File path: assets/icons/phone.svg
+  String get phone => 'assets/icons/phone.svg';
 
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
@@ -180,6 +186,7 @@ class $AssetsIconsGen {
     creditCard,
     delete,
     edit,
+    email,
     favourit,
     freeShipping,
     gift,
@@ -194,6 +201,7 @@ class $AssetsIconsGen {
     menu2,
     notification,
     paymentSecurity,
+    phone,
     profile,
     quality,
     returnIcon,
