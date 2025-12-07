@@ -23,12 +23,12 @@ import '../../features/buyer/features/payment_methods/presentation/pages/payment
 import '../../features/buyer/features/coupons/presentation/pages/coupons_screen.dart';
 import '../../features/buyer/features/wishlist/presentation/pages/wish_list_screen.dart';
 import '../../features/buyer/features/loyalty_program/presentation/pages/loyalty_screen.dart';
-import '../../features/buyer/features/notifications/presentation/pages/notification_screen.dart';
+import '../../features/buyer/features/notifications_and_preferances/presentation/pages/notification_and_preferances_screen.dart';
 import '../../features/buyer/features/help_support/presentation/pages/help_and_support_screen.dart';
 
 import '../../features/buyer/features/wishlist/presentation/cubit/wishlist_cubit.dart';
 import '../../features/buyer/features/loyalty_program/presentation/cubit/loyalty_program_cubit.dart';
-import '../../features/buyer/features/notifications/presentation/cubit/notifications_cubit.dart';
+import '../../features/buyer/features/notifications_and_preferances/presentation/cubit/notifications_cubit.dart';
 
 class PageRoutes {
   static final GlobalKey<NavigatorState> shellNavigatorKey =
@@ -143,8 +143,8 @@ class PageRoutes {
         path: '/${PagesKeys.notifications}',
         builder: (context, state) {
           return BlocProvider(
-            create: (context) => NotificationsCubit(),
-            child: const NotificationsScreen(),
+            create: (context) => NotificationsAndPreferencesCubit(),
+            child: const NotificationsAndPreferencesScreen(),
           );
         },
       ),

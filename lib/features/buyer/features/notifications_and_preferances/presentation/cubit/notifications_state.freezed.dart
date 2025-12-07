@@ -12,7 +12,7 @@ part of 'notifications_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$NotificationsState {
+mixin _$NotificationsAndPreferencesState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$NotificationsState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationsState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationsAndPreferencesState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'NotificationsState()';
+  return 'NotificationsAndPreferencesState()';
 }
 
 
 }
 
 /// @nodoc
-class $NotificationsStateCopyWith<$Res>  {
-$NotificationsStateCopyWith(NotificationsState _, $Res Function(NotificationsState) __);
+class $NotificationsAndPreferencesStateCopyWith<$Res>  {
+$NotificationsAndPreferencesStateCopyWith(NotificationsAndPreferencesState _, $Res Function(NotificationsAndPreferencesState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [NotificationsState].
-extension NotificationsStatePatterns on NotificationsState {
+/// Adds pattern-matching-related methods to [NotificationsAndPreferencesState].
+extension NotificationsAndPreferencesStatePatterns on NotificationsAndPreferencesState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -192,7 +192,7 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class Initial implements NotificationsState {
+class Initial implements NotificationsAndPreferencesState {
   const Initial();
   
 
@@ -212,7 +212,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'NotificationsState.initial()';
+  return 'NotificationsAndPreferencesState.initial()';
 }
 
 
@@ -224,7 +224,7 @@ String toString() {
 /// @nodoc
 
 
-class Loading implements NotificationsState {
+class Loading implements NotificationsAndPreferencesState {
   const Loading();
   
 
@@ -244,7 +244,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'NotificationsState.loading()';
+  return 'NotificationsAndPreferencesState.loading()';
 }
 
 
@@ -256,7 +256,7 @@ String toString() {
 /// @nodoc
 
 
-class Loaded implements NotificationsState {
+class Loaded implements NotificationsAndPreferencesState {
   const Loaded();
   
 
@@ -276,7 +276,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'NotificationsState.loaded()';
+  return 'NotificationsAndPreferencesState.loaded()';
 }
 
 
@@ -288,13 +288,13 @@ String toString() {
 /// @nodoc
 
 
-class Error implements NotificationsState {
+class Error implements NotificationsAndPreferencesState {
   const Error(this.message);
   
 
  final  String message;
 
-/// Create a copy of NotificationsState
+/// Create a copy of NotificationsAndPreferencesState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -313,14 +313,14 @@ int get hashCode => Object.hash(runtimeType,message);
 
 @override
 String toString() {
-  return 'NotificationsState.error(message: $message)';
+  return 'NotificationsAndPreferencesState.error(message: $message)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ErrorCopyWith<$Res> implements $NotificationsStateCopyWith<$Res> {
+abstract mixin class $ErrorCopyWith<$Res> implements $NotificationsAndPreferencesStateCopyWith<$Res> {
   factory $ErrorCopyWith(Error value, $Res Function(Error) _then) = _$ErrorCopyWithImpl;
 @useResult
 $Res call({
@@ -339,7 +339,7 @@ class _$ErrorCopyWithImpl<$Res>
   final Error _self;
   final $Res Function(Error) _then;
 
-/// Create a copy of NotificationsState
+/// Create a copy of NotificationsAndPreferencesState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(Error(
