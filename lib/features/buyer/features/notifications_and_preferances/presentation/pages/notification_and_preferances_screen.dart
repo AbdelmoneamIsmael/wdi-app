@@ -5,6 +5,7 @@ import 'package:wdi/core/extension/widget_widgets.dart';
 import 'package:wdi/core/themes/colors/colors.dart';
 import 'package:wdi/core/themes/styles/app_text_style.dart';
 import 'package:wdi/core/utils/functions/get_hight.dart';
+import 'package:wdi/core/widgets/app_drop_down.dart';
 import 'package:wdi/core/widgets/primary_container.dart';
 import 'package:wdi/gen/assets.gen.dart';
 
@@ -56,26 +57,14 @@ class LanguageSection extends StatelessWidget {
               context,
             ).copyWith(fontSize: 17.3.sp, height: getTextHeight(17.3, 24)),
           ),
-          Column(
-            spacing: 8,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                'Language',
-                style: AppTextStyles.medium(
-                  context,
-                ).copyWith(fontSize: 14.sp, height: getTextHeight(14, 20)),
-              ),
-              DropdownButtonFormField(
-                initialValue: 'en',
-                items: const [
-                  DropdownMenuItem(value: 'en', child: Text('English')),
-                  DropdownMenuItem(value: 'ar', child: Text('Arabic')),
-                ],
-                onChanged: (value) {},
-              ),
+          AppDropDown(
+            title: 'Language',
+            items: const [
+              DropdownMenuItem(value: 'en', child: Text('English')),
+              DropdownMenuItem(value: 'ar', child: Text('Arabic')),
             ],
+            initialValue: 'en',
+            onChanged: (value) {},
           ),
           Column(
             spacing: 8,
@@ -104,6 +93,7 @@ class LanguageSection extends StatelessWidget {
     );
   }
 }
+
 
 class PushNotificationSection extends StatelessWidget {
   const PushNotificationSection({super.key});

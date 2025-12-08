@@ -130,7 +130,7 @@ class ProfileScreen extends StatelessWidget {
                         title: 'Logout',
                         icon: Assets.icons.logout,
                         onTap: () {
-                          // context.pushNamed(PagesKeys.log);
+                          context.pushNamed(PagesKeys.signIn);
                         },
                       ),
                     ],

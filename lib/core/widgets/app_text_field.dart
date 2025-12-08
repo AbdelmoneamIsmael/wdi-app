@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wdi/core/themes/colors/colors.dart';
+import 'package:wdi/core/utils/functions/get_hight.dart';
 import '../themes/styles/app_text_style.dart';
 
 class AppTextFieldWithTitle extends StatelessWidget {
@@ -21,8 +24,10 @@ class AppTextFieldWithTitle extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.isRequired = false,
+    this.helperText,
   });
   final String title, hint;
+  final String? helperText;
   final bool scure, enabeld, readOnly;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
@@ -66,6 +71,15 @@ class AppTextFieldWithTitle extends StatelessWidget {
           maxLines: maxLines,
           onChanged: onChanged,
         ),
+        if (helperText != null)
+          Text(
+            helperText!,
+            style: AppTextStyles.regular(context).copyWith(
+              fontSize: 11.sp,
+              height: getTextHeight(11, 15.4),
+              color: LightColors.text2Color,
+            ),
+          ),
       ],
     );
   }

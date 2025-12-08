@@ -2,6 +2,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wdi/core/bloc/bloc_observer.dart';
+import 'package:wdi/features/auth/features/sign_in/presentation/cubit/sign_in_cubit.dart';
+import 'package:wdi/features/auth/features/sign_in/presentation/pages/sign_in_screen.dart';
+import 'package:wdi/features/auth/features/sign_up/presentation/cubit/sign_up_cubit.dart';
+import 'package:wdi/features/auth/features/sign_up/presentation/pages/sign_up_screen.dart';
 import 'package:wdi/features/buyer/features/account/presentation/cubit/account_cubit.dart';
 import 'package:wdi/features/buyer/features/account/presentation/pages/account_screen.dart';
 import 'package:wdi/features/buyer/features/checkout/presentation/cubit/checkout_cubit.dart';
@@ -37,6 +41,10 @@ class PageRoutes {
       GlobalKey<NavigatorState>(debugLabel: 'shell');
 
   static GoRouter router = GoRouter(
+    redirect: (context, state) {
+      PrintHelper('redirect: ${state.matchedLocation}');
+      return null;
+    },
     errorBuilder: (context, state) => const ErorPage(),
     initialLocation: kInitialRoute.isEmpty
         ? '/${PagesKeys.mainScreen}'
@@ -177,6 +185,26 @@ class PageRoutes {
           return BlocProvider(
             create: (context) => NotificationCubit(),
             child: const NotificationScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        name: PagesKeys.signIn,
+        path: '/${PagesKeys.signIn}',
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => SignInCubit(),
+            child: const SignInScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        name: PagesKeys.signUp,
+        path: '/${PagesKeys.signUp}',
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => SignUpCubit(),
+            child: const SignUpScreen(),
           );
         },
       ),

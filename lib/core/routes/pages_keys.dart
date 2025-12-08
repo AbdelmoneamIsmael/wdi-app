@@ -12,4 +12,6 @@ class PagesKeys {
   static const helpAndSupport = 'helpAndSupport';
   static const personalInformation = 'personalInformation';
   static const notification = 'notification';
+  static const signIn = 'signIn';
+  static const signUp = 'signUp';
 }
