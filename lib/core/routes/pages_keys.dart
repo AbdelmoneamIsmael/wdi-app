@@ -8,7 +8,8 @@ class PagesKeys {
   static const coupons = 'coupons';
   static const wishlist = 'wishlist';
   static const loyaltyProgram = 'loyaltyProgram';
-  static const notifications = 'notifications';
+  static const notificationsAndPreferance = 'notifications';
   static const helpAndSupport = 'helpAndSupport';
   static const personalInformation = 'personalInformation';
+  static const notification = 'notification';
 }

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:wdi/core/routes/pages_keys.dart';
 import 'package:wdi/core/themes/styles/app_text_style.dart';
 import 'package:wdi/core/utils/functions/get_hight.dart';
 import 'package:wdi/core/widgets/cashed_images.dart';
@@ -37,18 +39,24 @@ class HomeAppBar extends StatelessWidget {
         ),
       ),
       actions: [
-        Container(
-          width: 32.w,
-          height: 32.w,
-          padding: EdgeInsets.all(5.r),
-          margin: EdgeInsets.zero,
-          decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.circular(32.r),
-          ),
-          child: SvgPicture.asset(
-            Assets.icons.cart,
-            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+        GestureDetector(
+          onTap: () => GoRouter.of(context).pushNamed(PagesKeys.notification),
+          child: Container(
+            width: 32.w,
+            height: 32.w,
+            padding: EdgeInsets.all(5.r),
+            margin: EdgeInsets.zero,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.circular(32.r),
+            ),
+            child: SvgPicture.asset(
+              Assets.icons.notification,
+              colorFilter: const ColorFilter.mode(
+                Colors.white,
+                BlendMode.srcIn,
+              ),
+            ),
           ),
         ),
         SizedBox(width: 20.w),

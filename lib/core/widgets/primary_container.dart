@@ -11,6 +11,7 @@ class PrimaryContainer extends StatelessWidget {
     this.borderRadius,
     this.decoration,
     this.color,
+    this.withShadow = false,
   });
   final Widget child;
   final EdgeInsetsGeometry? padding, margin;
@@ -18,6 +19,7 @@ class PrimaryContainer extends StatelessWidget {
   final ShapeDecoration? decoration;
   final List<BoxShadow>? boxShadow;
   final Color? color;
+  final bool withShadow;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,10 +29,19 @@ class PrimaryContainer extends StatelessWidget {
       decoration:
           decoration ??
           BoxDecoration(
-            color: color,
+            color: color ?? Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(color: Theme.of(context).dividerColor, width: 1),
-            boxShadow: boxShadow,
+            boxShadow: withShadow
+                ? const [
+                    BoxShadow(
+                      color: Color(0x0C000000),
+                      blurRadius: 2,
+                      offset: Offset(0, 1),
+                      spreadRadius: 0,
+                    ),
+                  ]
+                : boxShadow,
           ),
       child: child,
     );

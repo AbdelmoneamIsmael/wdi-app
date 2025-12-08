@@ -113,7 +113,9 @@ class ProfileScreen extends StatelessWidget {
                         title: 'Notifications',
                         icon: Assets.icons.notification,
                         onTap: () {
-                          context.pushNamed(PagesKeys.notifications);
+                          context.pushNamed(
+                            PagesKeys.notificationsAndPreferance,
+                          );
                         },
                       ),
                       ProfileOptionWidget(

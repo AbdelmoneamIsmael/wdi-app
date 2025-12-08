@@ -7,6 +7,8 @@ import 'package:wdi/features/buyer/features/account/presentation/pages/account_s
 import 'package:wdi/features/buyer/features/checkout/presentation/cubit/checkout_cubit.dart';
 import 'package:wdi/features/buyer/features/checkout/presentation/pages/check_out_screen.dart';
 import 'package:wdi/features/buyer/features/help_support/presentation/cubit/help_support_cubit.dart';
+import 'package:wdi/features/buyer/features/notification/presentation/cubit/notification_cubit.dart';
+import 'package:wdi/features/buyer/features/notification/presentation/pages/notification_screen.dart';
 import 'package:wdi/features/buyer/features/product_details/presentation/cubit/product_details_cubit.dart';
 import 'package:wdi/features/buyer/features/product_details/presentation/pages/product_details.dart';
 import '../../features/buyer/features/main/presentation/cubit/main_cubit.dart';
@@ -139,8 +141,8 @@ class PageRoutes {
         },
       ),
       GoRoute(
-        name: PagesKeys.notifications,
-        path: '/${PagesKeys.notifications}',
+        name: PagesKeys.notificationsAndPreferance,
+        path: '/${PagesKeys.notificationsAndPreferance}',
         builder: (context, state) {
           return BlocProvider(
             create: (context) => NotificationsAndPreferencesCubit(),
@@ -165,6 +167,16 @@ class PageRoutes {
           return BlocProvider(
             create: (context) => AccountCubit(),
             child: const AccountScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        name: PagesKeys.notification,
+        path: '/${PagesKeys.notification}',
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => NotificationCubit(),
+            child: const NotificationScreen(),
           );
         },
       ),
