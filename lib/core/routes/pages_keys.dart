@@ -14,4 +14,6 @@ class PagesKeys {
   static const notification = 'notification';
   static const signIn = 'signIn';
   static const signUp = 'signUp';
+  static const forgetPassword = 'forgetPassword';
+  static const otp = 'otp';
 }

@@ -99,11 +99,16 @@ class SignInScreen extends StatelessWidget {
                     const SizedBox(),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: 'Forgot Password?'.toText(
-                        style: AppTextStyles.regular(context).copyWith(
-                          fontSize: 13.6.sp,
-                          height: getTextHeight(13.6, 19.36),
-                          color: Theme.of(context).primaryColor,
+                      child: TextButton(
+                        onPressed: () {
+                          context.pushNamed(PagesKeys.forgetPassword);
+                        },
+                        child: 'Forgot Password?'.toText(
+                          style: AppTextStyles.regular(context).copyWith(
+                            fontSize: 13.6.sp,
+                            height: getTextHeight(13.6, 19.36),
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),

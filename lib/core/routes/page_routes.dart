@@ -2,6 +2,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wdi/core/bloc/bloc_observer.dart';
+import 'package:wdi/features/auth/features/forget_password/presentation/cubit/forget_password_cubit.dart';
+import 'package:wdi/features/auth/features/forget_password/presentation/pages/forget_password_screen.dart';
+import 'package:wdi/features/auth/features/otp/presentation/cubit/otp_cubit.dart';
+import 'package:wdi/features/auth/features/otp/presentation/pages/otp_screen.dart';
 import 'package:wdi/features/auth/features/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:wdi/features/auth/features/sign_in/presentation/pages/sign_in_screen.dart';
 import 'package:wdi/features/auth/features/sign_up/presentation/cubit/sign_up_cubit.dart';
@@ -205,6 +209,26 @@ class PageRoutes {
           return BlocProvider(
             create: (context) => SignUpCubit(),
             child: const SignUpScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        name: PagesKeys.forgetPassword,
+        path: '/${PagesKeys.forgetPassword}',
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => ForgetPasswordCubit(),
+            child: const ForgetPasswordScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        name: PagesKeys.otp,
+        path: '/${PagesKeys.otp}',
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => OtpCubit(),
+            child: const OtpScreen(),
           );
         },
       ),
