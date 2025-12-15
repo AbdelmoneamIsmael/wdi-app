@@ -1,8 +1,8 @@
 import '../model/app_model/app_model.dart' show ApplicationModel;
 import '../routes/pages_keys.dart';
 
-const devBaseURl = 'https://aman.runasp.net';
-const prodBaseURl = 'https://aman.runasp.net';
+const devBaseURl = 'https://wdione.com/api';
+const prodBaseURl = 'https://wdione.com/api';
 String kDeviceToken = '';
 String kInitialRoute = '/${PagesKeys.mainScreen}';
 const kFontFamily = 'Inter';

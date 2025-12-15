@@ -2,10 +2,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wdi/core/bloc/bloc_observer.dart';
+import 'package:wdi/core/utils/functions/initialize_getit/initialize_getit.dart';
 import 'package:wdi/features/auth/features/forget_password/presentation/cubit/forget_password_cubit.dart';
 import 'package:wdi/features/auth/features/forget_password/presentation/pages/forget_password_screen.dart';
 import 'package:wdi/features/auth/features/otp/presentation/cubit/otp_cubit.dart';
 import 'package:wdi/features/auth/features/otp/presentation/pages/otp_screen.dart';
+import 'package:wdi/features/auth/features/sign_in/domain/repositories/sign_in_repo.dart';
 import 'package:wdi/features/auth/features/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:wdi/features/auth/features/sign_in/presentation/pages/sign_in_screen.dart';
 import 'package:wdi/features/auth/features/sign_up/presentation/cubit/sign_up_cubit.dart';
@@ -197,7 +199,9 @@ class PageRoutes {
         path: '/${PagesKeys.signIn}',
         builder: (context, state) {
           return BlocProvider(
-            create: (context) => SignInCubit(),
+            create: (context) => SignInCubit(
+              signInRepo: getIt.get<SignInRepo>()
+            ),
             child: const SignInScreen(),
           );
         },
