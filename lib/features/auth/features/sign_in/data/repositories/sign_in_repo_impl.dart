@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:wdi/core/errors/error_class.dart';
@@ -7,26 +9,24 @@ import 'package:wdi/features/auth/features/sign_in/data/data_sources/sign_in_rem
 import 'package:wdi/features/auth/features/sign_in/domain/entities/sigin_in_params.dart';
 import 'package:wdi/features/auth/features/sign_in/domain/repositories/sign_in_repo.dart';
 
-class SignInRepoImpl implements SignInRepo{
-
-
+class SignInRepoImpl implements SignInRepo {
   final SignInRemoteRepo signInRemoteRepo;
 
   SignInRepoImpl({required this.signInRemoteRepo});
 
-
   @override
-  Future<Either<Failure, GeneralResponseModel<UserInfoModel>>> signIn({required SignInParams signInParams}) async {
-    try{
+  Future<Either<Failure, GeneralResponseModel<UserInfoModel>>> signIn({
+    required SignInParams signInParams,
+  }) async {
+    try {
       final result = await signInRemoteRepo.signInCall(signInParams);
       return Right(result);
-    }
-        catch(e){
-      if(e is DioException){
+    } catch (e) {
+      if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
-      }else{
+      } else {
         return Left(ServerFailure(e.toString()));
       }
-        }
+    }
   }
 }

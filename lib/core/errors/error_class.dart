@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:wdi/core/model/general_reponse_model/general_response_model.dart';
 
 abstract class Failure {
   Failure(this.message);
@@ -8,6 +9,13 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.message);
   factory ServerFailure.fromDioError(DioException error) {
+    if (error.response?.data != null) {
+      final response = GeneralResponseModel.fromJson(
+        error.response?.data,
+        (j) {},
+      );
+      return ServerFailure(response.message ?? '');
+    }
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure('Connection Timeout with ApiServer');
@@ -23,7 +31,8 @@ class ServerFailure extends Failure {
         return ServerFailure('Cancel with ApiServer');
       case DioExceptionType.connectionError:
         return ServerFailure(
-            'Connection Error From the server ,Try Again Later');
+          'Connection Error From the server ,Try Again Later',
+        );
       case DioExceptionType.unknown:
         return ServerFailure('Unexpected Error with server, please try again!');
     }

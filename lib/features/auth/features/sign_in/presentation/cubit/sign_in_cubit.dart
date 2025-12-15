@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wdi/features/auth/features/sign_in/domain/entities/sigin_in_params.dart';
@@ -22,22 +21,28 @@ class SignInCubit extends Cubit<SignInState> {
     return super.close();
   }
 
- Future<void> signIn()async{
-    try{
-      if(loginForm.currentState!.validate()){
-        emit(SignInState.loading());
-        final result = await signInRepo.signIn(signInParams: SignInParams(email: emailController.text,
-            password: passwordController.text));
-        result.fold((l){
-          emit(SignInState.error(l.message.toString()));
-        }, (r){
-          print(r);
-          emit(SignInState.success());
-        });
+  Future<void> signIn() async {
+    try {
+      if (loginForm.currentState!.validate()) {
+        emit(const SignInState.loading());
+        final result = await signInRepo.signIn(
+          signInParams: SignInParams(
+            email: emailController.text,
+            password: passwordController.text,
+          ),
+        );
+        result.fold(
+          (l) {
+            emit(SignInState.error(l.message.toString()));
+          },
+          (r) {
+            print(r);
+            emit(const SignInState.success());
+          },
+        );
       }
-    }
-        catch(e){
+    } catch (e) {
       emit(SignInState.error(e.toString()));
-        }
- }
+    }
+  }
 }

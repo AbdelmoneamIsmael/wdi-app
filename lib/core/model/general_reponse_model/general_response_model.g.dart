@@ -17,6 +17,7 @@ GeneralResponseModel<T> _$GeneralResponseModelFromJson<T>(
   timestamp: json['timestamp'] == null
       ? null
       : DateTime.parse(json['timestamp'] as String),
+  errorCode: json['error_code'] as String?,
 );
 
 Map<String, dynamic> _$GeneralResponseModelToJson<T>(
@@ -28,6 +29,7 @@ Map<String, dynamic> _$GeneralResponseModelToJson<T>(
   'success': instance.success,
   'message': instance.message,
   'timestamp': instance.timestamp?.toIso8601String(),
+  'error_code': instance.errorCode,
 };
 
 T? _$nullableGenericFromJson<T>(
